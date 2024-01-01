@@ -1,4 +1,6 @@
-﻿<div class="container">
+﻿@model SignalR.Models.Messages
+
+<div class="container">
     <div class="row">
         <div class="col-3">Total Views:  </div>
         <div class="col-4">
@@ -9,6 +11,11 @@
         <div class="col-3">Total Connections/Users:  </div>
         <div class="col-4">
             <span id="totalUsersCounter"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <input asp-for="@Model.Message" id="message" class="form-control"/>
         </div>
     </div>
 </div>

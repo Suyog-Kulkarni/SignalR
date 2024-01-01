@@ -15,15 +15,24 @@ connection.on("updateTotalUsers", (value) => {
     newcount.innerText = value.toString();
 })
 
-// invoke the server methods to get the current value on page load  
+connection.on("updateMessage", (value) => {
+    var newcount = document.getElementById("message");
+    newcount.innerText = value.toString();
+})
+
+// invoke the server methods to get the current value on page load
+
+
 
 function newWindowLoadedOnClient()
 {
-    connection.send("NewWindowLoaded")/*, "Suyog").then((value) => console.log(value));*/
+    
+    connection.invoke("NewWindowLoaded", "snk").then((value) => console.log(value));
     // suyog is the user name which is passed to the server method
     // and then we are printing the value returned from the server method using console.log 
     // difference between invoke and send is that invoke is used to get the return value from the server method 
 }
+
 
 // start the connection
 
