@@ -33,5 +33,13 @@ public class UserHub : Hub
         return $"Total views and text is {messages.Message} : {TotalViews}";
         // we can also return a string to the caller of this method if we want to 
     }
+
+    public async Task<string> SendMessage(string message)
+    {
+        Messages messages = new();
+        messages.Message = message;
+        await Clients.All.SendAsync("updateMessage", messages.Message);
+        return $"Message is {messages.Message}";
+    }
 }
 
