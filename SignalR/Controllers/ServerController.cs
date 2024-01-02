@@ -26,8 +26,9 @@ namespace SignalR.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(Notification notification)
         {
-            await _hubContext.Clients.Client(ConnectedUser.UsersId[0]).SendAsync("ReceiveMessage", notification.Message);
-           // await _hubContext.Clients.User(User.Identity.Name).SendAsync("ReceiveMessage", notification.Message);
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", notification.Message);
+            // await _hubContext.Clients.User(User.Identity.Name).SendAsync("ReceiveMessage", notification.Message);
+            
             return View();
         }
 

@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.SignalR;
 using SignalR.Models;
 
 namespace SignalR.Hubs;
 public class NotificationHub : Hub
 {
-    /*public async Task SendMessage(string message)
-    {
-        await Clients.All.SendAsync("ReceiveMsg", message);
-    }*/
+  
+
 
     public override Task OnConnectedAsync()
     {
