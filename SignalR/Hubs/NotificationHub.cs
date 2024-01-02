@@ -12,6 +12,8 @@ public class NotificationHub : Hub
     public override Task OnConnectedAsync()
     {
         ConnectedUser.UsersId.Add(Context.ConnectionId);// add connection id to list of connected users id 
+        // connection id changes every time the user refreshes the page
+        // 
         return base.OnConnectedAsync();
     }
 

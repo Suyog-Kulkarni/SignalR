@@ -6,10 +6,9 @@
 
 <h1>Index</h1>
 
-<h4>No. of connected users @Model.</h4>
 
 <ul>
-    @foreach (var message in ViewBag.NumberOfUsers)
+    @foreach (var message in ConnectedUser.UsersId)
     {
         <li>@message</li>
     }
